@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+void algorithm(int n,int *pointer)
+{
+    int swap,ind;
+    for (int i=0;i<n;i++){
+        ind=i;
+        for(int j=i+1;j<n;j++){
+            if(*(pointer+j)<*(pointer+ind)){
+                ind=j;
+                swap=*(pointer+ind);
+                *(pointer+ind)=*(pointer+i);
+                *(pointer+i)=swap;
+    }} } 
+    }
+void print(int arr[],int n,int *pointer)
+{
+    for(int k=0;k<n;k++){
+        cout<<pointer[k]<<endl;
+    }
+}
+int main()
+{
+    int n,*pointer;
+    cout<<"enter the size n: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter array: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    pointer=arr;
+    algorithm(n,pointer);
+    cout<<"Sorted array is: "<<endl;
+    print(arr,n,pointer);
+    return 0;
+}
